@@ -4,7 +4,7 @@ Feature: The Dish Homepage
 
         Background: The homepage
                 Given the "Red Star" restaurant has been saved
-                Given I am on the homepage
+                And I am on the homepage
 
         Scenario: The title
                 Then I should see "Dish"
