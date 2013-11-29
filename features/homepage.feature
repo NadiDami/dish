@@ -11,3 +11,6 @@ Feature: The Dish Homepage
 
         Scenario: Viewing saved restaurants
                 Then I should see "Red Star"
+
+        Scenario: Adding new restaurants
+                And I should see "Add new restaurant"
