@@ -12,11 +12,12 @@ Feature: Adding new restaurants
                 Then I should see "Where have you eaten recently?"
 
         Scenario: Adding a new restaurant
-                Given I add restaurant "Rotary" with city "London"
+                Given I add restaurant "Rotary" with city "London" and description "Tasty burgers and chicken rolls"
                 Then I should see "Rotary"
+                And I should see "Tasty burgers and chicken rolls"
 
         Scenario: Viewing a restaurant page
-                Given I add restaurant "Rotary" with city "London"
+                Given I add restaurant "Rotary" with city "London" and description "Tasty burgers and chicken rolls"
                 And I click "Red Star"
                 Then I should see "Red Star"
                 And I should not see "Rotary"
