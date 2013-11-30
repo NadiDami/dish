@@ -16,6 +16,9 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
+    when /the "Red Star" page/
+      '/restaurants/100'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
