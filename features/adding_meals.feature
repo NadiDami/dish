@@ -4,7 +4,8 @@ Feature: Adding meals to restaurants
         I need to be able to add new meals
 
         Background: Restaurant page
-                Given the "Red Star" restaurant has been saved
+                Given Alex is logged in
+                And the "Red Star" restaurant has been saved
                 And the "Chicken Broth" meal has been saved                
                 Given I am on the "Red Star" page
 

@@ -9,6 +9,10 @@ Feature: In order to be able to submit a restaurant or meal
                 Then I should see "Sign up"
                 And I should see "Sign in"
 
+        Scenario: Trying to add a restaurant not having signed in
+                Then I click "Add new restaurant"
+                And I should see "You need to sign in or sign up before continuing."
+
         Scenario: Signing up
                 Then Alex signs up with email with valid credentials
                 And I should see "Hi, alex@makers.com"

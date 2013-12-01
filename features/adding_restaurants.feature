@@ -6,6 +6,7 @@ Feature: Adding new restaurants
         Background: The homepage
                 Given the "Red Star" restaurant has been saved
                 And I am on the homepage
+                And Alex is logged in
 
         Scenario: Form for adding new restaurants
                 And I click "Add new restaurant"
