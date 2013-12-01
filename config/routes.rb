@@ -16,7 +16,9 @@ Dish::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
       resources :restaurants do
-        resources :meals
+        resources :meals do
+          resources :ratings 
+        end
       end
   # Example resource route with options:
   #   resources :products do
