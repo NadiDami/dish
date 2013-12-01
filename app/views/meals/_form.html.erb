@@ -1,0 +1,21 @@
+<%= form_for [@restaurant, @restaurant.meals.build] do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %>(£)
+    <%= f.number_field :price %>
+  </p>
+  <p>
+    <%= f.radio_button :meal_stage, 'Starter' %>
+    <%= f.label :meal_stage_starter, "Starter" %>
+    <%= f.radio_button :meal_stage, 'Main course' %>
+    <%= f.label :meal_stage_main, "Main course" %>
+    <%= f.radio_button :meal_stage, 'Dessert'%>
+    <%= f.label :meal_stage_dessert, "Dessert" %>
+  </p>
+  <p>
+    <%= f.submit 'Submit dish' %>
+  </p>
+<% end %>

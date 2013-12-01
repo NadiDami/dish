@@ -11,7 +11,7 @@ Given(/^I edit "(.*?)" with city "(.*?)"$/) do |name, city|
   click_link name
   click_link 'Edit restaurant'
   fill_in 'City', :with => city
-  click_button 'Submit changes'
+  click_button 'Submit restaurant'
 end
 
 Given(/^I delete "(.*?)"$/) do |name|

@@ -1,21 +1,5 @@
 <h2>Where have you eaten recently?</h2>
 
-<%= form_for @restaurant do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.submit 'Submit restaurant' %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', root_path %>

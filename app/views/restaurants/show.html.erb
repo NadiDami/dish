@@ -2,13 +2,7 @@
 <p><%= @restaurant.city %></p>
 <p><%= @restaurant.description %></p>
 
-<ul>
-  <% @restaurant.meals.each do |meal| %>
-    <li><p><%= meal.name %></p></li>
-    <p>£<%= meal.price %></p>
-    <p><%= meal.meal_stage %></p>
-  <% end %>
-</ul>
+<%= render 'meals/meal' %>
 
 <%= link_to 'Add a new dish', new_restaurant_meal_path(@restaurant) %>
 <%= link_to 'Edit restaurant', edit_restaurant_path %>
