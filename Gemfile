@@ -41,6 +41,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'poltergeist'
 end
 
 # Use ActiveModel has_secure_password

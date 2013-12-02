@@ -13,6 +13,7 @@ Feature: Rating inidividual meals
                 Then I should see "Rate this dish!"
                 And I should see the rating buttons
 
+        @javascript
         Scenario: Submitting a rating
                 Then I rate "Chicken Broth" with a "2"
                 And I should see "2"

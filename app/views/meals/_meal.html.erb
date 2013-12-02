@@ -3,15 +3,21 @@
     <li><p><%= meal.name %></p></li>
     <p>£<%= meal.price %></p>
     <p><%= meal.meal_stage %></p>
-    <h4 class='ratings-count'>Total score <%= meal.ratings_total %></h4>
-    <h4 class='ratings-count'>Average score <%= meal.average_ratings_total %></h4>
+    <h4 class='ratings-count' data-id='<%= meal.id %>'>Total score 
+      <span class='total-score'><%= meal.ratings_total %></span>
+    </h4>
+    <h4 class='ratings-count' data-id='<%= meal.id %>'>Average score 
+      <span class='average-score'><%= meal.average_ratings_total %></span>
+    </h4>
     <p>Rate this dish!</p>
     <p>
-    <%= button_to '1', restaurant_meal_ratings_path(@restaurant, meal, value: 1) %>
-    <%= button_to '2', restaurant_meal_ratings_path(@restaurant, meal, value: 2) %>
-    <%= button_to '3', restaurant_meal_ratings_path(@restaurant, meal, value: 3) %>
-    <%= button_to '4', restaurant_meal_ratings_path(@restaurant, meal, value: 4) %>
-    <%= button_to '5', restaurant_meal_ratings_path(@restaurant, meal, value: 5) %>
+    <%= rating_button @restaurant, meal, 1, '1' %>
+    <%= rating_button @restaurant, meal, 2, '2' %>
+    <%= rating_button @restaurant, meal, 3, '3' %>
+    <%= rating_button @restaurant, meal, 4, '4' %>
+    <%= rating_button @restaurant, meal, 5, '5' %>
     </p>
   <% end %>
 </ul>
+
+

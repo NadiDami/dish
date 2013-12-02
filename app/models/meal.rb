@@ -9,7 +9,7 @@ class Meal < ActiveRecord::Base
 
   def average_ratings_total
       return 0 if total_number_of_ratings == 0
-      (((rating_1.size) + (rating_2.size * 2) + (rating_3.size * 3) + (rating_4.size * 4) + (rating_5.size * 5))/ total_number_of_ratings).round
+      (ratings_total/ total_number_of_ratings.to_f).round(2)
   end
 
   private
@@ -35,7 +35,7 @@ class Meal < ActiveRecord::Base
   end
 
   def total_number_of_ratings
-     rating_1.size + rating_2.size + rating_3.size + rating_4.size + rating_5.size
+     ratings.size
   end
 
 end
