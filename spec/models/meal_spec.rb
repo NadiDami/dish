@@ -6,44 +6,42 @@ describe Meal do
   it { should have_many(:ratings) }
   it { should have_many(:raters)}
 
-  describe '.ratings_total' do
+  let(:meal) {FactoryGirl.create(:meal)}
+
+  describe '.ratings_total and .average_ratings_total' do
 
     it 'should correctly calculate a rating of 1' do
-       meal = Meal.create name: 'Chicken soup'
-       meal.stub(:rating_of) do |n|
-        if n==1
-          [double(:rating)]
-        else
-          []
-        end
-      end
+       FactoryGirl.create(:rating)
        expect(meal.ratings_total).to eq 1
      end
 
     it 'should correctly calculate a rating of 6' do
-       meal = Meal.create name: 'Chicken soup'
-       meal.stub(:rating_of) do |n|
-        if n==1 || n==5
-          [double(:rating)]
-        else
-          []
-        end
-      end
+       FactoryGirl.create(:rating)
+       FactoryGirl.create(:rating, value: 5)
        expect(meal.ratings_total).to eq 6
      end
 
     it 'should correctly calculate an average rating' do
-      meal = Meal.create name: 'Chicken soup'
-       meal.stub(:rating_of) do |n|
-        if n==1 || n==5
-          [double(:rating)]
-        else
-          []
-        end
-      end
-      meal.stub total_number_of_ratings: 2
-      expect(meal.average_ratings_total).to eq 3      
+      FactoryGirl.create(:rating)
+      FactoryGirl.create(:rating, value: 5)
+      expect(meal.average_ratings_total).to eq 3
     end
+
+  #   context '.sorted_by_average_rating' do
+
+  #   it 'puts highly rated posts first' do
+  #     high_rating = Factory
+  #     low_rating = Post.new(title: 'Hello Natty', body: 'Hello Natty')
+
+  #     popular.stub votes_total: 8
+  #     less_popular.stub votes_total: 3
+
+  #     Post.stub(all: [less_popular, popular])
+
+  #     expect(Post.sorted_by_votes.first).to eq popular
+  #   end
+
+  # end
 
   end
 end

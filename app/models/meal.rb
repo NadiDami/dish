@@ -4,7 +4,7 @@ class Meal < ActiveRecord::Base
   has_many :raters, :through => :ratings, :source => :users
 
   def ratings_total
-    1.upto(5).inject { |memo, number| memo + (rating_of(number)).size * number }
+    1.upto(5).inject(0) { |memo, number| memo + (rating_of(number)).size * number }
     #(rating_1.size * 1) + (rating_2.size * 2) + (rating_3.size * 3) + (rating_4.size * 4) + (rating_5.size * 5)
   end
 
