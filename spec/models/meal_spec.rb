@@ -27,21 +27,21 @@ describe Meal do
       expect(meal.average_ratings_total).to eq 3
     end
 
-  #   context '.sorted_by_average_rating' do
+    context '.sorted_by_average_rating' do
 
-  #   it 'puts highly rated posts first' do
-  #     high_rating = Factory
-  #     low_rating = Post.new(title: 'Hello Natty', body: 'Hello Natty')
+    it 'puts highly rated meals first' do
+      high_rating = FactoryGirl.create(:meal)
+      low_rating = FactoryGirl.create(:meal, id: 11)
 
-  #     popular.stub votes_total: 8
-  #     less_popular.stub votes_total: 3
+      high_rating.stub average_ratings_total: 4.55
+      low_rating.stub average_ratings_total: 2.49
 
-  #     Post.stub(all: [less_popular, popular])
+      Meal.stub(all: [high_rating, low_rating])
 
-  #     expect(Post.sorted_by_votes.first).to eq popular
-  #   end
+      expect(Meal.sorted_by_average_ratings.first).to eq high_rating
+    end
 
-  # end
+  end
 
   end
 end

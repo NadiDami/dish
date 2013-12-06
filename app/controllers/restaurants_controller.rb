@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find params[:id]
+    @meals = @restaurant.meals.sorted_by_average_ratings
   end
 
   def edit
