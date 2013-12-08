@@ -14,6 +14,8 @@ Feature: Rating inidividual meals
                 And I should see the rating buttons
 
         @javascript
-        Scenario: Submitting a rating
+        Scenario: Submitting a rating, one per user
                 Then I rate "Chicken Broth" with a "2"
                 And I should see "2"
+                Then I rate "Chicken Broth" with a "5"
+                And I should see "5"

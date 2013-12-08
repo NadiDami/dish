@@ -28,20 +28,18 @@ describe Meal do
     end
 
     context '.sorted_by_average_rating' do
+      it 'puts highly rated meals first' do
+        high_rating = FactoryGirl.create(:meal)
+        low_rating = FactoryGirl.create(:meal, id: 11)
 
-    it 'puts highly rated meals first' do
-      high_rating = FactoryGirl.create(:meal)
-      low_rating = FactoryGirl.create(:meal, id: 11)
+        high_rating.stub average_ratings_total: 4.55
+        low_rating.stub average_ratings_total: 2.49
 
-      high_rating.stub average_ratings_total: 4.55
-      low_rating.stub average_ratings_total: 2.49
+        Meal.stub(all: [high_rating, low_rating])
 
-      Meal.stub(all: [high_rating, low_rating])
-
-      expect(Meal.sorted_by_average_ratings.first).to eq high_rating
+        expect(Meal.sorted_by_average_ratings.first).to eq high_rating
+      end
     end
-
-  end
 
   end
 end

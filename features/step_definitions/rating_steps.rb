@@ -3,6 +3,6 @@ Then(/^I should see the rating buttons$/) do
 end
 
 Then(/^I rate "(.*?)" with a "(.*?)"$/) do |meal, rating|
-  click_button '2'
-  expect(page).to have_css '.ratings-count', text: '2'
+  click_button rating
+  expect(page).to have_css '.ratings-count', text: rating
 end
